@@ -7,22 +7,58 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Item {
 
     @Id
-    private String iname;
-    private String availability;
+    private int itemCode;
+    private String itemName;
+    private Nutrition nutritionFacts;
+    private Ingredients ingredients;
+    private Rating rating;
+    private int price;
 
-    public String getIname() {
-        return iname;
+    public int getItemCode() {
+        return itemCode;
     }
 
-    public void setIname(String iname) {
-        this.iname = iname;
+    public void setItemCode(int itemCode) {
+        this.itemCode = itemCode;
     }
 
-    public String getAvailability() {
-        return availability;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setAvailability(String availability) {
-        this.availability = availability;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public Nutrition getNutritionFacts() {
+        return nutritionFacts;
+    }
+
+    public void setNutritionFacts(Nutrition nutritionFacts) {
+        this.nutritionFacts = nutritionFacts;
+    }
+
+    public Ingredients getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Ingredients ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
