@@ -10,7 +10,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "stores", path = "stores")
 public interface StoreRepository extends MongoRepository<Store,Integer> {
     List<Store> findByStoreCode(@Param("storeCode") String storeCode);
-    List<Store> findByStoreName(@Param("storeName") String storeName);
+   // List<Store> findByStoreName(@Param("storeName") String storeName);
     List<Store> findByRating(@Param("rating") String rating);
     List<Store> findByLocation(@Param("location") String location);
 }

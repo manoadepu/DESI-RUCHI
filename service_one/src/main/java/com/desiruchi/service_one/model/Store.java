@@ -5,13 +5,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Document
 public class Store {
     @Id
     private int storeCode;
     private String storeName;
-    private HashMap<String,Item> menu;
+    private List<Item> items;
     private Location location;
     private Rating rating;
     private ContactInfo contactInfo;
@@ -32,12 +33,12 @@ public class Store {
         this.storeName = storeName;
     }
 
-    public HashMap<String, Item> getMenu() {
-        return menu;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setMenu(HashMap<Integer, Item> menu) {
-        menu = menu;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public Location getLocation() {

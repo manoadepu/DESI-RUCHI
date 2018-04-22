@@ -13,6 +13,7 @@ public class Item {
     private Ingredients ingredients;
     private Rating rating;
     private int price;
+    private String itemCategory;
 
     public int getItemCode() {
         return itemCode;
@@ -48,6 +49,14 @@ public class Item {
 
     public Rating getRating() {
         return rating;
+    }
+
+    public String getItemCategory() {
+        return itemCategory;
+    }
+
+    public void setItemCategory(String itemCategory) {
+        this.itemCategory = itemCategory;
     }
 
     public void setRating(Rating rating) {

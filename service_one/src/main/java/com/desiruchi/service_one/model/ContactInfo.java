@@ -2,7 +2,7 @@ package com.desiruchi.service_one.model;
 
 public class ContactInfo {
     private String managerName;
-    private String StoreEmailId;
+    private String storeEmailId;
     private String storeContact;
     private String managerContact;
 
@@ -15,11 +15,11 @@ public class ContactInfo {
     }
 
     public String getStoreEmailId() {
-        return StoreEmailId;
+        return storeEmailId;
     }
 
     public void setStoreEmailId(String storeEmailId) {
-        StoreEmailId = storeEmailId;
+        storeEmailId = storeEmailId;
     }
 
     public String getStoreContact() {

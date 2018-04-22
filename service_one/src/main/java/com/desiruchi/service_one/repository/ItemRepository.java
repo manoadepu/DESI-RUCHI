@@ -14,11 +14,11 @@ import java.util.List;
          PATCH: Partial update
          DELETE: Delete
          GET: View
+ EndPoint: http://localhost:8080/items/
  */
 @RepositoryRestResource(collectionResourceRel = "items", path = "items")
 public interface ItemRepository extends MongoRepository<Item,String>{
     List<Item> findByRating(@Param("rating") String availability);
     List<Item> findByItemName(@Param("itemName") String itemName);
     List<Item> findByItemCode(@Param("itemCode") String itemCode);
-
 }
