@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:500');
 .top-buffer {
     margin-left: 50px;
     margin-top: 20px;
@@ -6,7 +7,7 @@
     margin-bottom: 10px;
 }
 .footer-bottom {
-    background-color: black;
+    background-color: rgba(57, 122, 235, 0.774);
     margin-top: 10px;
     height: 200px;
     border-bottom: 100px;

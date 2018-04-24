@@ -1,0 +1,17 @@
+.top-buffer {
+    margin-left: 300px;
+    margin-top: 20px;
+}
+.item-body-button {
+    margin-bottom: 10px;
+}
+.footer-bottom {
+    background-color: black;
+    margin-top: 10px;
+    height: 200px;
+    border-bottom: 100px;
+}
+
+.card{
+    margin-top: 10px;
+}
