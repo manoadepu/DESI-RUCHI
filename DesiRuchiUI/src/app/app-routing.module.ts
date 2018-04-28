@@ -12,9 +12,9 @@ const routes: Routes = [
     { path: '', component: BothComponent},
     { path: 'items', component: ItemspageComponent },
     { path: 'stores', component: StorespageComponent },
-    { path: 'seller', component: SellerComponent },
-    { path: 'sellerlogin', component: SellerloginComponent },
-    { path: 'sellerupload', component: SelleruploadComponent }
+    { path: 'sellerlogin/sellerupload', component: SelleruploadComponent },
+    { path: 'sellerlogin/seller', component: SellerComponent },
+    { path: 'sellerlogin', component: SellerloginComponent }
 ];
 
 @NgModule({
