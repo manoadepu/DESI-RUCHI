@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BothComponent } from './both/both.component';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -18,7 +20,7 @@ import { BothComponent } from './both/both.component';
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
