@@ -4,14 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { BothComponent } from './both/both.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents,
-    BothComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
