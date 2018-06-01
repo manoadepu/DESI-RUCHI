@@ -1,0 +1,45 @@
+<div class="container">
+<div class="row">
+  <div class="col">
+   <h2 class="store-register-header">Register your store</h2> 
+  <form>
+    <div class="form-group">
+      <label for="storename">Store Name</label>
+      <input type="text" class="form-control" id="storename" placeholder="Enter your store name">
+      <small id="emailHelp" class="form-text text-muted">You can create multiple categories in your store</small>
+    </div>
+    <div class="form-group">
+      <label for="storepassword">Password</label>
+      <input type="password" class="form-control" id="storepassword" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="selectstorecategory">Select store category</label>
+      <select class="form-control" id="selectstorecategory">
+        <option>Food</option>
+        <option>Gifts</option>
+        <option>Clothes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="storedescription">Store description</label>
+      <textarea class="form-control" id="storedescription" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="storelogo">Store logo</label>
+      <input type="file" class="form-control-file" id="storelogo" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted">Please upload an image that is size of max 2MB</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="col add-category-form">
+    <h4 class="add-category-header">Add Category</h4>
+    <form class="form-inline">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter Category Name">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Category</button>
+     </form>
+</div>
+</div>
+</div>

@@ -1,0 +1,56 @@
+<!-- <div class="container">
+    <div class="row">
+      <form class="form-inline">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter Category Name">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Category</button>
+     </form>
+    </div>
+</div> -->
+    <!-- The form should be displayed appropriately according to the category of the store  -->
+<h2 id="itemdetailsheader">Enter Item Details</h2>
+<div class="container">
+    <div class="row">
+      <div class="col">
+          <form>
+              <div class="form-group">
+                  <label for="itemname">Item Name</label>
+                  <input type="text" class="form-control" id="itemname" placeholder="Enter item name">
+              </div>
+              <div class="form-group">
+                  <label for="itemprice">Item Price</label>
+                  <input type="text" class="form-control" id="itemprice" placeholder="Enter item price">
+              </div>
+              <div class="form-group">
+                  <label for="storeitemcategory">Select category</label>
+                  <select class="form-control" id="storeitemcategory">
+                    <option>category1</option>
+                    <option>category2</option>
+                    <option>category3</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="itemdescription">Item description</label>
+                    <textarea class="form-control" id="itemdescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="storelogo">Store logo</label>
+                    <input type="file" class="form-control-file" id="storelogo" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">Please upload an image that is size of max 2MB</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload Item</button>
+          </form>
+      </div>
+      <div class="col add-category-form">
+            <h4 class="add-category-header">Add Category</h4>
+            <form class="form-inline">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter Category Name">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Category</button>
+             </form>
+        </div>  
+    </div>
+</div>
