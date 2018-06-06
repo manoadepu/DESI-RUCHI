@@ -1,3 +1,5 @@
+import { ClothesComponent } from './clothes/clothes.component';
+import { FoodComponent } from './food/food.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,7 +16,9 @@ const routes: Routes = [
     { path: 'stores', component: StorespageComponent },
     { path: 'sellerlogin/sellerupload', component: SelleruploadComponent },
     { path: 'sellerlogin/seller', component: SellerComponent },
-    { path: 'sellerlogin', component: SellerloginComponent }
+    { path: 'sellerlogin', component: SellerloginComponent },
+    { path: 'items/food', component: FoodComponent },
+    { path: 'items/clothes', component: ClothesComponent }
 ];
 
 @NgModule({
@@ -27,6 +31,8 @@ export const routingComponents = [
     StorespageComponent,
     BothComponent, SellerComponent,
     SellerloginComponent,
-    SelleruploadComponent
+    SelleruploadComponent,
+    FoodComponent,
+    ClothesComponent
 ];
 

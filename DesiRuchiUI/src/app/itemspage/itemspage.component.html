@@ -33,8 +33,21 @@
       {{item.rating}}
     </li>
    </ul> -->
-
-   <div class="row top-buffer">
+  <div class="row top-buffer">
+    <div class="col-sm-3 col-lg-3">
+        <div class="card">
+            <img class="card-img-top" src="assets\images\butterchicken.jpg" alt="Card image cap">
+            <a [routerLink]="['food']" class="btn btn-primary">F O O D</a>
+        </div>
+    </div>
+    <div class="col-sm-3 col-lg-3">
+        <div class="card">
+            <img class="card-img-top" src="assets\images\Clothes.jpg" alt="Card image cap">
+            <a [routerLink]="['clothes']" class="btn btn-primary">C L O T H E S</a>
+        </div>
+    </div>
+  </div>
+   <!-- <div class="row top-buffer">
     <div *ngFor="let item of itemsFromMongo" class="col-sm-3 col-lg-3">
             <div class="card">
               <img class="card-img-top" src="assets\images\butterchicken.jpg" alt="Card image cap">
@@ -59,11 +72,6 @@
                       [ngbPopover]="nutrientFactsPopOver" popoverTitle="Nutrition">
                       Nutrition
                     </button>
-                    <!-- <ng-template #nutrientFactsPopOver>
-                      <div *ngFor="let nut of item.nutritionFacts" >
-                        <li>{{nut}}</li>
-                      </div>
-                    </ng-template> -->
                   </div>
                   <div class="col-sm-6">
                       <button type="button" class="btn btn-outline-secondary" placement="right"
@@ -83,10 +91,6 @@
                       </button>
                   </div>
             </div>
-          </div>
-        
+          </div>  
 </div>
-
-
-
-
+ -->
