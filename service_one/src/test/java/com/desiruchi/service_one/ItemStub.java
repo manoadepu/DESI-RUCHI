@@ -1,9 +1,6 @@
 package com.desiruchi.service_one;
 
-import com.desiruchi.service_one.model.Ingredients;
-import com.desiruchi.service_one.model.Item;
-import com.desiruchi.service_one.model.Nutrition;
-import com.desiruchi.service_one.model.Rating;
+import com.desiruchi.service_one.model.*;
 import com.google.gson.Gson;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -15,6 +12,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.mapper.ObjectMapperType.JACKSON_2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -23,6 +21,20 @@ public class ItemStub {
     public void generateItemStub(){
 
         Nutrition nutrition = new Nutrition();
+        HashMap<NutritionFacts, String> nutritionFactsHashMap = new HashMap<>();
+        nutritionFactsHashMap.put(NutritionFacts.calcium,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.cholestrol,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.DietaryFiber,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.iron,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.Protien,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.TotalCarbs,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.totalFat,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.vitaminA,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.vitaminC,"0g");
+        nutritionFactsHashMap.put(NutritionFacts.Sugars,"0g");
+
+        nutrition.setNutritionFacts(nutritionFactsHashMap);
+
         Ingredients ingredients = new Ingredients();
 
         RestAssured.baseURI = "http://localhost:8080";
@@ -32,18 +44,8 @@ public class ItemStub {
         String[] categories = {"sweets","hot", "masala", "ingredients"};
         Rating[] ratings = {Rating.ONE,Rating.TWO,Rating.THREE,Rating.FOUR,Rating.FIVE};
 
-        nutrition.setCalcium(10);
-        nutrition.setCholestrol(12);
-        nutrition.setDietaryFiber(5);
-        nutrition.setIron(4);
-        nutrition.setProtien(15);
-        nutrition.setTotalCarbs(500);
-        nutrition.setSugars(25);
-        nutrition.setTotalFat(10);
-        nutrition.setVitaminA(20);
-        nutrition.setVitaminC(5);
-
         List< String > Ilist = new ArrayList<>();
+
         Ilist.add("sugar");
         Ilist.add("peanuts");
         Ilist.add("cashews");

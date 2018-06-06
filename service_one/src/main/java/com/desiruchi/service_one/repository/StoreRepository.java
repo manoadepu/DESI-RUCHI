@@ -4,9 +4,11 @@ import com.desiruchi.service_one.model.Store;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
+@CrossOrigin
 @RepositoryRestResource(collectionResourceRel = "stores", path = "stores")
 public interface StoreRepository extends MongoRepository<Store,Integer> {
     List<Store> findByStoreCode(@Param("storeCode") String storeCode);
