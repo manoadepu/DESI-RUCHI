@@ -1,3 +1,46 @@
-<p>
-  food works!
-</p>
+<div class="row top-buffer">
+    <div *ngFor="let item of itemsFromMongo" class="col-sm-3 col-lg-3">
+            <div class="card">
+              <img class="card-img-top" src="assets\images\butterchicken.jpg" alt="Card image cap">
+              <b><h5 class="card-title">Butter Chicken <ngb-rating [(rate)]="currentRate"></ngb-rating> </h5></b>
+              <h3 class="card-subtitle">Category: {{item.itemCategory}}</h3>
+              <h3 class="card-subtitle">Price:{{item.price}}</h3>
+              <div class="row cardbodyrow">
+                  <div class="col-sm-6">
+                      <button type="button" class="btn btn-outline-secondary item-body-button" placement="bottom"
+                        ngbPopover={{item.itemCategory}} popoverTitle="Category">
+                        Category
+                      </button>
+                    </div>
+                  <div class="col-sm-6">
+                      <button type="button" class="btn btn-outline-secondary item-body-button" placement="bottom"
+                        ngbPopover={{item.price}} popoverTitle="Price">
+                        Price
+                      </button>
+                    </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-outline-secondary item-body-button" placement="bottom"
+                      [ngbPopover]="nutrientFactsPopOver" popoverTitle="Nutrition">
+                      Nutrition
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                      <button type="button" class="btn btn-outline-secondary" placement="right"
+                        [ngbPopover]="ingredientsPopOver" popoverTitle="Ingredients">
+                        Ingredients
+                      </button>
+                      <ng-template #ingredientsPopOver>
+                          <div *ngFor="let nut of item.ingredients.ingredients" >
+                            <li>{{nut}}</li>
+                          </div>
+                        </ng-template>
+                  </div>
+                  <div class="col-sm-6">
+                      <button type="button" class="btn btn-outline-secondary" placement="right"
+                        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus Vivamus sagittis lacus vel augue laoreet rutrum faucibusVivamus sagittis lacus vel augue laoreet rutrum faucibus Vivamus sagittis lacus vel augue laoreet rutrum faucibus Vivamus sagittis lacus vel augue laoreet rutrum faucibusVivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Ingredients">
+                        Stores
+                      </button>
+                  </div>
+            </div>
+          </div>  
+</div>
