@@ -1,3 +1,4 @@
+import { ClotheStoresComponent } from './clothe-stores/clothe-stores.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { FoodComponent } from './food/food.component';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { BothComponent } from './both/both.component';
 import { SellerComponent } from './seller/seller.component';
 import { SellerloginComponent } from './sellerlogin/sellerlogin.component';
 import { SelleruploadComponent } from './sellerupload/sellerupload.component';
+import { FoodStoresComponent } from './food-stores/food-stores.component';
 
 const routes: Routes = [
     { path: '', component: BothComponent},
@@ -18,7 +20,9 @@ const routes: Routes = [
     { path: 'sellerlogin/seller', component: SellerComponent },
     { path: 'sellerlogin', component: SellerloginComponent },
     { path: 'items/food', component: FoodComponent },
-    { path: 'items/clothes', component: ClothesComponent }
+    { path: 'items/clothes', component: ClothesComponent },
+    { path: 'clothes/stores', component: ClotheStoresComponent },
+    { path: 'food/stores', component: FoodStoresComponent }
 ];
 
 @NgModule({
@@ -33,6 +37,8 @@ export const routingComponents = [
     SellerloginComponent,
     SelleruploadComponent,
     FoodComponent,
-    ClothesComponent
+    ClothesComponent,
+    ClotheStoresComponent,
+    FoodStoresComponent
 ];
 

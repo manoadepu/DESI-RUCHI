@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FoodComponent } from './food/food.component';
 import { ClothesComponent } from './clothes/clothes.component';
+import { ClotheStoresComponent } from './clothe-stores/clothe-stores.component';
+import { FoodStoresComponent } from './food-stores/food-stores.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ClothesComponent } from './clothes/clothes.component';
     AppComponent,
     routingComponents,
     FoodComponent,
-    ClothesComponent
+    ClothesComponent,
+    ClotheStoresComponent,
+    FoodStoresComponent
   ],
   imports: [
     BrowserModule,
