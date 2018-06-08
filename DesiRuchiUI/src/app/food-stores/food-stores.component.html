@@ -1,3 +1,72 @@
-<p>
-  food-stores works!
-</p>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light badge-info">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">D E S I R U C H I</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+              <a class="nav-link" href="/items/food">Food Items</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/food/stores">Food Stores</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/clothes/stores">Clothes Stores</a>
+        </li>  
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 bg-dark" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="row top-buffer">
+      <div *ngFor="let store of storesFromMongo" class="col-sm-3 col-lg-3">
+              <div class="card">
+                <img class="card-img-top" src="assets\images\paradise.jpg" alt="Card image cap">
+                <b><h3 class="card-title">{{store.storeName}} <ngb-rating [(rate)]="currentRate"></ngb-rating> </h3></b>
+                <h6 class="card-subtitle">Location: {{store.location.indianState}}, {{store.location.indianCity}}</h6>
+                <!--<h3 class="card-subtitle">Price:{{item.price}}</h3> -->
+                <!-- <div class="row cardbodyrow">
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-outline-secondary item-body-button" placement="bottom"
+                          ngbPopover={{store.storeName}} popoverTitle="Category">
+                          Category
+                        </button>
+                      </div> -->
+                    <!-- <div class="col-sm-6">
+                        <button type="button" class="btn btn-outline-secondary item-body-button" placement="bottom"
+                          ngbPopover={{item.price}} popoverTitle="Price">
+                          Price
+                        </button>
+                    </div>
+                  <div class="col-sm-6">
+                      <button type="button" class="btn btn-outline-secondary item-body-button" placement="bottom"
+                        [ngbPopover]="nutrientFactsPopOver" popoverTitle="Nutrition">
+                        Nutrition
+                      </button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-outline-secondary" placement="right"
+                          [ngbPopover]="ingredientsPopOver" popoverTitle="Ingredients">
+                          Ingredients
+                        </button>
+                        <ng-template #ingredientsPopOver>
+                            <div *ngFor="let nut of item.ingredients.ingredients" >
+                              <li>{{nut}}</li>
+                            </div>
+                          </ng-template>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-outline-secondary" placement="right"
+                          ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus Vivamus sagittis lacus vel augue laoreet rutrum faucibusVivamus sagittis lacus vel augue laoreet rutrum faucibus Vivamus sagittis lacus vel augue laoreet rutrum faucibus Vivamus sagittis lacus vel augue laoreet rutrum faucibusVivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Ingredients">
+                          Stores
+                        </button>
+                    </div> -->
+              </div>
+            </div>  
+  </div>
+  
+  <ngb-pagination [collectionSize]="70" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+ 
