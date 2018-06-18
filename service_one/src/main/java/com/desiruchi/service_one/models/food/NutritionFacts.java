@@ -1,4 +1,4 @@
-package com.desiruchi.service_one.model;
+package com.desiruchi.service_one.models.food;
 
 public enum NutritionFacts {
     TotalCarbs,
