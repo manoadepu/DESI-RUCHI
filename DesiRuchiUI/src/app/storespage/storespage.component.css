@@ -1,0 +1,17 @@
+.top-buffer { 
+    margin-top:20px;
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-bottom:45px;
+}
+
+hr {
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
+
+.display-4 {
+    size: 20px;
+}
