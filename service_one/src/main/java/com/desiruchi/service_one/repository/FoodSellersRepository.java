@@ -14,5 +14,7 @@ import java.util.List;
 public interface FoodSellersRepository extends MongoRepository<FoodSellersCollection,Integer> {
     List<FoodSellersCollection> storeID(@Param("storeID") int storeID);
     List<FoodSellersCollection> findByEmail(@Param("email") String email);
+    List<FoodSellersCollection> findByStoreName(@Param("storeName") String storeName);
+    List<FoodSellersCollection> findByDescription(@Param("description") String description);
     List<FoodSellersCollection> findByPassword(@Param("password") String password);
 }

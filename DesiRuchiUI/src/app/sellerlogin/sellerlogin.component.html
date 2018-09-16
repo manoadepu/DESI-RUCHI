@@ -2,9 +2,9 @@
     <form class="form-group">
       <h2 class="form-signin-heading signin-header">Please sign in</h2>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+      <input type="email" id="inputEmail" name="seller-email" class="form-control" [(ngModel)]="email" placeholder="Email address" required="" autofocus="">
+      <label for="inputPassword"  class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name="seller-password" [(ngModel)]="password" class="form-control" placeholder="Password" required="">
       <div class="checkbox remember-signup">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
@@ -12,7 +12,10 @@
         <a [routerLink]="['seller']" class="btn btn-primary">Sing up</a>
       </div>
       <div class="store-register-header">
-          <button [routerLink]="['sellerupload']" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </div>
-    </form>
+          <!-- <button [routerLink]="['sellerupload']" class="btn btn-lg btn-primary btn-block" type="submit" (click)="sellerLoginSubmit()">Sign in</button> -->
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="sellerLoginSubmit()">Sign in</button> 
+        </div>
+     </form>
+    <h4>{{email}}</h4>
+    <h4>{{password}}</h4>
   </div>

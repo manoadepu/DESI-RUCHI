@@ -32,7 +32,7 @@ public class FoodStore {
     public void insertFoodStores(){
 
         com.desiruchi.service_one.models.food.collection.FoodStore foodStore = new com.desiruchi.service_one.models.food.collection.FoodStore();
-        for(int i = 0; i<10;i++) {
+        for(int i = 100; i<102;i++) {
             foodStore.setStoreId(i);
             foodStore.setStoreName("Store"+i);
             i++;

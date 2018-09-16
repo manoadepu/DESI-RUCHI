@@ -18,7 +18,9 @@ public class FoodSellers {
             foodSellersCollection.setStoreID(i);
             foodSellersCollection.setEmail("mano.adepu"+i+"@gmail.com");
             foodSellersCollection.setPassword("5a$$w0rd"+i);
-
+            foodSellersCollection.setStoreName("Manohar's Store");
+            foodSellersCollection.setDescription("Awesome store!!");
+            foodSellersCollection.setLogo("ThisIsMyLoGo");
             //TODO: remmove this and investigate why helpers.restCall isn't working
             Gson gson = new Gson();
             String request = gson.toJson(foodSellersCollection);
@@ -29,7 +31,5 @@ public class FoodSellers {
             System.out.println("STATUS CODE: "+response.getStatusCode());
             Assert.assertTrue(response.getStatusCode() == 201);
         }
-
-
     }
 }
