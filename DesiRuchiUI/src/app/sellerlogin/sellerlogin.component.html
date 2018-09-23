@@ -1,21 +1,26 @@
-<div class="container">
+<div class="container form-group">
     <form class="form-group">
       <h2 class="form-signin-heading signin-header">Please sign in</h2>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" name="seller-email" class="form-control" [(ngModel)]="email" placeholder="Email address" required="" autofocus="">
+      <input  required  minlength="4" type="email" id="inputEmail" name="seller-email" class="form-control" [(ngModel)]="email" placeholder="Email address" required="" autofocus="">
+      <!-- <div class="alert alert-danger">First Name is Required</div> -->
+      
       <label for="inputPassword"  class="sr-only">Password</label>
-      <input type="password" id="inputPassword" name="seller-password" [(ngModel)]="password" class="form-control" placeholder="Password" required="">
+      <input required type="password" id="inputPassword" name="seller-password" [(ngModel)]="password" class="form-control" placeholder="Password" required="">
+      <!-- <div class="alert alert-danger">Password is Required</div> -->
+      
       <div class="checkbox remember-signup">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-        <a [routerLink]="['seller']" class="btn btn-primary">Sing up</a>
+        <a routerLink="{{routerLink}}" class="btn btn-primary">Sign up</a>
       </div>
       <div class="store-register-header">
           <!-- <button [routerLink]="['sellerupload']" class="btn btn-lg btn-primary btn-block" type="submit" (click)="sellerLoginSubmit()">Sign in</button> -->
           <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="sellerLoginSubmit()">Sign in</button> 
         </div>
      </form>
+     <h4>{{routerLink}}</h4>
     <h4>{{email}}</h4>
     <h4>{{password}}</h4>
   </div>

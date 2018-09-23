@@ -20,14 +20,19 @@ export class SellerComponent implements OnInit {
   storeDescription: string;
   rs: RegisterStoreService;
   constructor(private httpClient: HttpClient) {}
-
+  storeID: number;
   ngOnInit() {
   }
 
   onSubmit() {
+    new RegisterStoreService(this.httpClient).getStoreID().subscribe(response => {
+      this.storeID = response;
+    });
+    console.log('Store ID from rest service: ' + this.storeID);
     console.log('OnSubmit');
     console.log(this.storeName);
-    this.foodSeller.storeID = 6352;
+    console.log('this.storeID' + this.storeID);
+    this.foodSeller.storeID = this.storeID;
     this.foodSeller.storeName = this.storeName;
     this.foodSeller.email = this.email;
     // this.foodSeller.logo = this.logo;
@@ -39,5 +44,8 @@ export class SellerComponent implements OnInit {
     this.rs.saveStore(this.foodSeller);
     console.log('After post!!');
   }
-}
 
+  onFileSelected(event) {
+    console.log(event);
+  }
+}

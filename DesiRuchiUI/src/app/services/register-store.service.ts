@@ -1,10 +1,22 @@
 import { Injectable } from '@angular/core';
 import { FoodSellerModel } from '../models/food-seller-model';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class RegisterStoreService {
   constructor(private httpClient: HttpClient) {}
+
+
+  getStoreID(): Observable<any>{
+    return this.httpClient.get('http://localhost:8080/getStoreID')
+    .map(
+      response => {
+        console.log(response);
+        return response;
+      }
+    );
+  }
 
   saveStore(foodSellerModel: FoodSellerModel) {
     if (foodSellerModel.storeCategory === 'Food') {
