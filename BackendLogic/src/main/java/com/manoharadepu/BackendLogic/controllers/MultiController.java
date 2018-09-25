@@ -3,6 +3,7 @@ package com.manoharadepu.BackendLogic.controllers;
 import com.manoharadepu.BackendLogic.Constants;
 import com.manoharadepu.BackendLogic.Endpoints;
 import com.manoharadepu.BackendLogic.controllers.ErrorHandlers.RestTemplateResponseErrorHandler;
+import com.manoharadepu.BackendLogic.models.SellerLoginValidationResponse;
 import com.manoharadepu.BackendLogic.models.foodSellerCollection.FoodSellerCollectionModel;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class MultiController {
 
 
     @RequestMapping(value = "/sellerLoginValidation", method = RequestMethod.POST)
-    public String sellerLoginValidation(@RequestBody sellerLoginRequest sellerLoginRequest){
+    public SellerLoginValidationResponse sellerLoginValidation(@RequestBody sellerLoginRequest sellerLoginRequest){
         String credentialsValidated = "ErrorPage";
         System.out.println("endpoint working");
         System.out.println(sellerLoginRequest.toString());
@@ -34,6 +35,8 @@ public class MultiController {
         if(email.equals(sellerLoginRequest.getEmail()) && password.equals(sellerLoginRequest.getPassword()))
             credentialsValidated = "seller";
 
-        return credentialsValidated;
+        SellerLoginValidationResponse sellerLoginValidationResponse = new SellerLoginValidationResponse();
+        sellerLoginValidationResponse.setRouterLink("sellerupload");
+        return sellerLoginValidationResponse;
     }
 }

@@ -6,7 +6,7 @@ import { SellerLoginModel } from '../models/seller-login-model';
 import { FoodSellerModel } from '../models/food-seller-model';
 @Injectable()
 export class SellerLoginServiceService {
-  routerLink: String = 'wrong';
+  routerLink: String;
   result: Boolean = false;
   foodSeller: FoodSellerModel;
   constructor(private httpClient: HttpClient) {console.log('in sellerlogin service'); }
@@ -19,7 +19,8 @@ export class SellerLoginServiceService {
     console.log('sellerLoginvalidation');
     this.getFoodSeller(sellerLoginModel).subscribe(response => {
       console.log('Response from get food seller:');
-      console.log(response);
+      console.log(response.routerLink);
+      this.routerLink = response.routerLink;
       console.log('router link: ' + this.routerLink);
     });
   }
@@ -48,9 +49,6 @@ getFoodSeller(sellerLoginModel: SellerLoginModel): Observable<any> {
     })
   .map(
     response => {
-      console.log('Response with getEmail rest call' + response);
-        this.routerLink = response.toString();
-        console.log('router link: ' + this.routerLink);
       return response;
     }
   );
