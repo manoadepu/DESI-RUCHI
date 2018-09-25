@@ -16,15 +16,11 @@ export class SellerLoginServiceService {
    * @param sellerLoginModel
    */
   sellerLoginValidation(sellerLoginModel: SellerLoginModel) {
-    console.log('in sellerLoginvalidation');
+    console.log('sellerLoginvalidation');
     this.getFoodSeller(sellerLoginModel).subscribe(response => {
-      this.foodSeller = response._embedded.FoodSellers[0];
-      if (sellerLoginModel.email === this.foodSeller.email && sellerLoginModel.password === this.foodSeller.password) {
-        this.result = true;
-        this.routerLink = 'seller';
-      } else {
-        this.routerLink = 'food/stores';
-    }
+      console.log('Response from get food seller:');
+      console.log(response);
+      console.log('router link: ' + this.routerLink);
     });
   }
 
@@ -33,6 +29,7 @@ export class SellerLoginServiceService {
  * @param sellerLoginModel
  */
 validateCredentialsAndSendRouterLink(sellerLoginModel: SellerLoginModel): String {
+  console.log('validateCredentialsAndSendRouterLink');
   this.sellerLoginValidation(sellerLoginModel);
   console.log('router link in validateCredentialsAndSendRouterLink: ' + this.routerLink);
   return this.routerLink;
@@ -43,15 +40,18 @@ validateCredentialsAndSendRouterLink(sellerLoginModel: SellerLoginModel): String
  * @param sellerLoginModel
  */
 getFoodSeller(sellerLoginModel: SellerLoginModel): Observable<any> {
-  console.log('In get food seller to convert the response object');
-  console.log(sellerLoginModel.email);
-  console.log('RestCall: http://localhost:8080/foodSellers/search/findByEmail?email=' + sellerLoginModel.email);
-  return this.httpClient.get('http://localhost:8080/foodSellers/search/findByEmail?email=' + sellerLoginModel.email)
+  console.log('getFoodSeller');
+  return this.httpClient.post('http://localhost:8082/sellerLoginValidation',
+    {
+      "email": sellerLoginModel.email,
+      "password": sellerLoginModel.password
+    })
   .map(
     response => {
       console.log('Response with getEmail rest call' + response);
+        this.routerLink = response.toString();
+        console.log('router link: ' + this.routerLink);
       return response;
     }
   );
-}
-}
+}}
